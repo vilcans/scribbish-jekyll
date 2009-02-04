@@ -1,0 +1,30 @@
+<div class="hentry" id="article-<%= article.id %>">
+  <h2 class="entry-title">
+    <%= (controller.action_name.include? 'permalink') ? article.title : link_to_permalink(article,article.title) %>
+    <%= content_tag(:span, article.published_comments.size, :class => 'comment_count') if article.published_comments.size > 0 %>
+  </h2>
+  <div class="vcard">
+    Posted by <span class="fn"><%= author_link(article) %></span>
+  </div>
+  <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= js_distance_of_time_in_words_to_now article.published_at %></abbr>
+  <br class="clear" />
+  <div class="entry-content">
+    <%= article.html(:body) %>
+    <% if article.extended? -%>
+    <div class="extended">
+      <% (controller.action_name == 'index') ? content_tag('p', link_to_permalink(article, 'Continue reading...')) : article.html(:extended) -%>
+    </div>
+    <% end -%>
+  </div>
+  <ul class="meta">
+    <%= content_tag(:li, category_links(article).gsub(',', ' '), :class => 'categories') unless article.categories.empty? %>
+    <%= content_tag(:li, tag_links(article).gsub(',', ' '),      :class => 'tags')       unless article.tags.empty? %>
+    <li>Meta
+      <%= trackbacks_link(article) if article.allow_pings? %>
+      <%= comments_link(article)   if article.allow_comments? %>
+      <a href="<%= article.permalink_url %>" rel="bookmark">permalink</a>
+      <a href="<%= xml_url :action=>'feed', :type=>'article', :format => 'rss',  :id => article %>">rss</a>
+      <a href="<%= xml_url :action=>'feed', :type=>'article', :format => 'atom', :id => article %>">atom</a>
+    </li>
+  </ul>
+</div>
