@@ -1,0 +1,4 @@
+---
+layout: post
+---
+This is a test post to demonstrate Jekyll and Scribbish.
