@@ -1,40 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  <title><%=h page_title %></title>
-  <%= page_header %>
-  <%= stylesheet_link_tag '/stylesheets/theme/application.css', :media => 'all' %>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>{{ page.title }}</title>
+  <!--<meta name="author" content="TODO: Author" />
+  <link href="http://TODO: feed URL" rel="alternate" title="TODO: feed title" type="application/atom+xml" />
+  -->
+
+  <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
 </head>
 
 <body>
 <div id="container">
   <div id="header">
-    <h1><span><%= link_to this_blog.blog_name, this_blog.base_url %></span></h1>
-    <h2><%= this_blog.blog_subtitle %></h2>
+    <h1><span><a href="http://TODO: Site URL">TODO: Site name</a></span></h1>
+    <h2>TODO: Site subtitle</h2>
   </div>
 
   <div id="page">
     <div id="content">
-      <%= @content_for_layout %>
-      <%= javascript_tag 'show_dates_as_local_time()' %>
+      {{ content }}
+      <!-- TODO: check this: javascript_tag 'show_dates_as_local_time()' -->
     </div>
 
     <div id="sidebar">
       <!-- search -->
-      <%= render :partial => 'search' %>
+      <div id="search" class="search">
+        <form action="/search" id="sform" method="get">
+          <p><input type="text" id="q" name="q" value="" /></p>
+        </form>
+        <br />
+        <div id="loading" class="loading" style="display:none;">Searching...</div>
+        <div id="results" class="results"></div>
+      </div>
 
       <!-- sidebar components -->
-      <%= render_sidebars %>
+      <div class="sidebar-node">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="TODO: some link">TODO: some link</a></li>
+        </ul>
+      </div>
     </div>
     <br style="clear:both;" />
   </div>
 
   <div id="footer">
     <hr />
-    <p><%= link_to this_blog.blog_name, this_blog.base_url %></p>
+    <p><a href="http://TODO: Site URL">TODO: Site name</a></p>
     <ul>
-      <li>powered by <%= link_to 'typo', 'http://typosphere.org' %> /
-          styled with <%= link_to 'scribbish', 'http://quotedprintable.com/pages/scribbish' %></li>
+      <li>powered by <a href="http://github.com/mojombo/jekyll">jekyll</a> /
+          styled with <a href="http://quotedprintable.com/pages/scribbish">scribbish</a></li>
     </ul>
   </div>
 </div>
