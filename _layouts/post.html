@@ -16,14 +16,14 @@ layout: default
     {{ content }}
   </div>
   <ul class="meta">
-    {{ if page.categories != empty }}
+    {% if page.categories != empty %}
       <!-- TODO: correct link to categories -->
       <li>Categories:{% for t in page.categories %} <a href="/categories/{{ t }}">{{ t }}</a>{% endfor %}</li>
-    {{ endif }}
-    {{ if page.topics != empty }}
+    {% endif %}
+    {% if page.topics != empty %}
       <!-- TODO: correct link to topics -->
       <li>Topics:{% for t in page.topics %} <a href="/topics/{{ t }}">{{ t }}</a>{% endfor %}</li>
-    {{ endif }}
+    {% endif %}
     <li>Meta:
       <!-- TODO: should permalink be absolute? -->
       <a href="{{ page.url }}" rel="bookmark">permalink</a>
