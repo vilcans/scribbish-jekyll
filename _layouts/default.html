@@ -1,3 +1,8 @@
+---
+site_name: "EDITME: site_name"
+site_subtitle: "EDITME: site_subtitle"
+site_url: "http://localhost:4000" # EDITME
+---
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -5,9 +10,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>{{ page.title }}</title>
-  <!--<meta name="author" content="TODO: Author" />
+  {% if page.author %}<meta name="author" content="{{ page.author }}" />{% endif %}
   <link href="http://TODO: feed URL" rel="alternate" title="TODO: feed title" type="application/atom+xml" />
-  -->
 
   <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
 </head>
@@ -15,8 +19,8 @@
 <body>
 <div id="container">
   <div id="header">
-    <h1><span><a href="http://TODO: Site URL">TODO: Site name</a></span></h1>
-    <h2>TODO: Site subtitle</h2>
+    <h1><span><a href="{{ page.site_url }}">{{ page.site_name }}</a></span></h1>
+    <h2>{{ page.site_subtitle }}</h2>
   </div>
 
   <div id="page">
@@ -49,7 +53,7 @@
 
   <div id="footer">
     <hr />
-    <p><a href="http://TODO: Site URL">TODO: Site name</a></p>
+    <p><a href="{{ page.site_url }}">{{ page.site_name }}</a></p>
     <ul>
       <li>powered by <a href="http://github.com/mojombo/jekyll">jekyll</a> /
           styled with <a href="http://quotedprintable.com/pages/scribbish">scribbish</a></li>
