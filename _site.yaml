@@ -1,9 +1,15 @@
 name: Site name
 subtitle: Site subtitle
 
-# Absolute base URL for this site
+# Absolute base URL for this site without trailing slash
 url: http://localhost:4000
 
-# Link to feed.
+# Absolute URL of feed.
 # You may want to change this URL to point to a feedburner feed.
-feed: /atom.xml
+feed: http://localhost:4000/atom.xml
+
+# Author element in atom feed. Optional.
+# If email is supplied, name is required.
+#author:
+#  name: Jane Doe
+#  email: someone@somewhere.xy
