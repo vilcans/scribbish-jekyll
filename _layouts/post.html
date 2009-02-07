@@ -25,9 +25,8 @@ layout: default
       <li>Topics:{% for t in page.topics %} <a href="/topics/{{ t }}">{{ t }}</a>{% endfor %}</li>
     {% endif %}
     <li>Meta:
-      <!-- TODO: should permalink be absolute? -->
-      <a href="{{ page.url }}" rel="bookmark">permalink</a>
-      {% comment %}<a href="TODO: rss link">rss</a> <a href="TODO: atom link">atom</a>{% endcomment %}
+      <a href="{{ site.url }}{{ page.url }}" rel="bookmark">permalink</a>
+      <a href="{{ site.feed }}">atom</a>
     </li>
   </ul>
 </div>

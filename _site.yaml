@@ -1,0 +1,9 @@
+name: Site name
+subtitle: Site subtitle
+
+# Absolute base URL for this site
+url: http://localhost:4000
+
+# Link to feed.
+# You may want to change this URL to point to a feedburner feed.
+feed: /atom.xml
