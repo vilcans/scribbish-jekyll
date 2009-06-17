@@ -20,10 +20,6 @@ layout: default
       <!-- TODO: correct link to categories -->
       <li>Categories:{% for t in page.categories %} <a href="/categories/{{ t }}">{{ t }}</a>{% endfor %}</li>
     {% endif %}
-    {% if page.topics != empty %}
-      <!-- TODO: correct link to topics -->
-      <li>Topics:{% for t in page.topics %} <a href="/topics/{{ t }}">{{ t }}</a>{% endfor %}</li>
-    {% endif %}
     {% if page.tags != empty %}
       <!-- TODO: correct link to tags -->
       <li>Tags:{% for t in page.tags %} <a href="/tags/{{ t }}">{{ t }}</a>{% endfor %}</li>
