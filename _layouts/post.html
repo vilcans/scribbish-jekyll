@@ -18,7 +18,7 @@ layout: default
   <ul class="meta">
     {% if page.categories != empty %}
       <!-- TODO: correct link to categories -->
-      <li>Categories:{% for t in page.categories %} <a href="/categories/{{ t }}">{{ t }}</a>{% endfor %}</li>
+      <li>Categories:{% for t in page.categories %} <a href="/{{ t }}/">{{ t }}</a>{% endfor %}</li>
     {% endif %}
     {% if page.tags != empty %}
       <!-- TODO: correct link to tags -->
