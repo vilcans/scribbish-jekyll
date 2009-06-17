@@ -17,12 +17,11 @@ layout: default
   </div>
   <ul class="meta">
     {% if page.categories != empty %}
-      <!-- TODO: correct link to categories -->
-      <li>Categories:{% for t in page.categories %} <a href="/{{ t }}/">{{ t }}</a>{% endfor %}</li>
+      <li>Categories:{% for t in page.categories %} <a href="/{{ t | cgi_escape }}/">{{ t }}</a>{% endfor %}</li>
     {% endif %}
     {% if page.tags != empty %}
       <!-- TODO: correct link to tags -->
-      <li>Tags:{% for t in page.tags %} <a href="/tags/{{ t }}">{{ t }}</a>{% endfor %}</li>
+      <li>Tags:{% for t in page.tags %} <a href="/tags/{{ t | cgi_escape }}">{{ t }}</a>{% endfor %}</li>
     {% endif %}
     <li>Meta:
       <a href="{{ site.url }}{{ page.url }}" rel="bookmark">permalink</a>
