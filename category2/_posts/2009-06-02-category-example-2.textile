@@ -1,0 +1,5 @@
+---
+layout: post
+tags: example
+---
+This post is in category 2.

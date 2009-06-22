@@ -1,0 +1,9 @@
+---
+layout: post
+author: Martin
+tags:
+  - example
+  - jekyll
+  - tag with spaces
+---
+This is a test post to demonstrate Jekyll and Scribbish.
