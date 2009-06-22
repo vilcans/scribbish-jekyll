@@ -21,7 +21,7 @@ layout: default
     {% endif %}
     {% if page.tags != empty %}
       <!-- TODO: correct link to tags -->
-      <li>Tags:{% for t in page.tags %} <a href="/tags/{{ t | cgi_escape }}">{{ t }}</a>{% endfor %}</li>
+      <li>Tags:{% for t in page.tags %} <a href="/tags/#{{ t | cgi_escape }}">{{ t }}</a>{% endfor %}</li>
     {% endif %}
     <li>Meta:
       <a href="{{ site.url }}{{ page.url }}" rel="bookmark">permalink</a>

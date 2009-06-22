@@ -1,5 +1,8 @@
 ---
 layout: post
 author: Martin
+tags:
+  - example
+  - jekyll
 ---
 This is a test post to demonstrate Jekyll and Scribbish.
