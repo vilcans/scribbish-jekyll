@@ -7,7 +7,8 @@ layout: default
     Since site.tags is a has tag here is a pair of
     [ tag name, list of posts ]
   {% endcomment %}
-  <a id="{{tag.first}}" href="#{{tag.first}}"><h2>{{tag.first}}</h2></a>
+  {% assign t = tag.first %}
+  <a id="{{ t | cgi_escape }}" href="#{{ t | cgi_escape }}"><h2>{{ t }}</h2></a>
   {% assign posts = tag.last %}
   {% include postlist.html %}
 {% endfor %}
